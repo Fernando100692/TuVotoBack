@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "election_statuses",
+  "info": {
+    "singularName": "election-status",
+    "pluralName": "election-statuses",
+    "displayName": "ElectionStatus"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "vote_status": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vote-status.vote-status"
+    }
+  }
+}

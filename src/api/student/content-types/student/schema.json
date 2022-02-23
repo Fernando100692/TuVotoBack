@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "grade": {
+      "type": "string",
+      "required": true,
+      "maxLength": 3
+    },
+    "created_date": {
+      "type": "datetime"
+    },
+    "student_code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "group": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "isCandidate": {
+      "type": "boolean",
+      "default": false
+    },
+    "campus": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campus.campus",
+      "inversedBy": "students"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "candidate_vote": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::candidate.candidate"
+    }
+  }
+}
