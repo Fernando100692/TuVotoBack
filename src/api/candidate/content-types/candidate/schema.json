@@ -4,10 +4,11 @@
   "info": {
     "singularName": "candidate",
     "pluralName": "candidates",
-    "displayName": "Candidate"
+    "displayName": "Candidate",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -17,11 +18,12 @@
       "default": "0"
     },
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "campus": {
       "type": "relation",

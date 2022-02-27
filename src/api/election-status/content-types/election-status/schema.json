@@ -4,10 +4,11 @@
   "info": {
     "singularName": "election-status",
     "pluralName": "election-statuses",
-    "displayName": "ElectionStatus"
+    "displayName": "ElectionStatus",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
