@@ -25,5 +25,20 @@ module.exports = {
       path: "/students/createManyUsers",
       handler: "student.createManyUsers",
     },
+    {
+      method: "POST",
+      path: "/students/deleteAll",
+      handler: "student.deleteAll",
+    },
+    {
+      method: "POST",
+      path: "/password/changePassword",
+      handler: "student.changePassword",
+    },
+    {
+      method: "POST",
+      path: "/password/adminChangePassword",
+      handler: "student.adminChangePassword",
+    },
   ],
 };
