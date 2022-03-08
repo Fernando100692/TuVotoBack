@@ -40,5 +40,10 @@ module.exports = {
       path: "/password/adminChangePassword",
       handler: "student.adminChangePassword",
     },
+    {
+      method: "PUT",
+      path: "/students/editUser/:id",
+      handler: "student.editUser",
+    },
   ],
 };

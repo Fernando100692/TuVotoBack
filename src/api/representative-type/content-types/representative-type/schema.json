@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "representative_types",
+  "info": {
+    "singularName": "representative-type",
+    "pluralName": "representative-types",
+    "displayName": "RepresentativeType",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "Personero"
+    }
+  }
+}

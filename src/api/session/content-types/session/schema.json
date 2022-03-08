@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sessions",
+  "info": {
+    "singularName": "session",
+    "pluralName": "sessions",
+    "displayName": "Session",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true,
+      "default": "MAÑANA"
+    },
+    "description": {
+      "type": "string",
+      "default": "Mañana",
+      "required": true
+    }
+  }
+}

@@ -28,6 +28,9 @@
       "relation": "oneToMany",
       "target": "api::candidate.candidate",
       "mappedBy": "campus"
+    },
+    "totalRepresentatives": {
+      "type": "integer"
     }
   }
 }

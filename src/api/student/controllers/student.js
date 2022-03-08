@@ -52,6 +52,21 @@ module.exports = createCoreController("api::student.student", ({ strapi }) => ({
     return entries;
   },
 
+  async editUser(ctx) {
+    const { id } = ctx.params;
+    const body = ctx.request.body;
+    /* return strapi.entityService.update('plugin::users-permissions.user', userId, {
+      data: params,
+      populate: ['role'],
+    }); */
+  console.log('ESO SE VAAAA', body, id);
+    await strapi.db.query('plugin::users-permissions.user').update({
+      where: { id },
+      data: body,
+      populate: ['role'],
+    });
+  },
+
   async findByStudentCode(ctx) {
     const { student_code } = ctx.params;
     const entry = await strapi.db.query("api::student.student").findOne({

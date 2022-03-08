@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/students": {
+    "/representative-histories": {
       "get": {
         "responses": {
           "200": {
@@ -25,17 +25,25 @@
                               "grade": {
                                 "type": "string"
                               },
-                              "created_date": {
-                                "type": "string",
-                                "format": "date-time"
-                              },
-                              "student_code": {
+                              "group": {
                                 "type": "string"
                               },
-                              "isCandidate": {
+                              "campus": {
+                                "type": "string"
+                              },
+                              "votes": {
+                                "type": "integer"
+                              },
+                              "session": {
+                                "type": "string"
+                              },
+                              "isActive": {
                                 "type": "boolean"
                               },
-                              "campus": {
+                              "type": {
+                                "type": "string"
+                              },
+                              "campusRelation": {
                                 "type": "object",
                                 "properties": {
                                   "data": {
@@ -1266,7 +1274,7 @@
                                   }
                                 }
                               },
-                              "users_permissions_user": {
+                              "studentRelation": {
                                 "type": "object",
                                 "properties": {
                                   "data": {
@@ -1282,46 +1290,6 @@
                                     }
                                   }
                                 }
-                              },
-                              "candidate_vote": {
-                                "type": "object",
-                                "properties": {
-                                  "data": {
-                                    "type": "object",
-                                    "properties": {
-                                      "id": {
-                                        "type": "string"
-                                      },
-                                      "attributes": {
-                                        "type": "object",
-                                        "properties": {}
-                                      }
-                                    }
-                                  }
-                                }
-                              },
-                              "session": {
-                                "type": "object",
-                                "properties": {
-                                  "data": {
-                                    "type": "object",
-                                    "properties": {
-                                      "id": {
-                                        "type": "string"
-                                      },
-                                      "attributes": {
-                                        "type": "object",
-                                        "properties": {}
-                                      }
-                                    }
-                                  }
-                                }
-                              },
-                              "group": {
-                                "type": "string"
-                              },
-                              "scolarLevel": {
-                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -1545,7 +1513,7 @@
           }
         },
         "tags": [
-          "Student"
+          "Representative-history"
         ],
         "parameters": [
           {
@@ -1653,17 +1621,25 @@
                             "grade": {
                               "type": "string"
                             },
-                            "created_date": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "student_code": {
+                            "group": {
                               "type": "string"
                             },
-                            "isCandidate": {
+                            "campus": {
+                              "type": "string"
+                            },
+                            "votes": {
+                              "type": "integer"
+                            },
+                            "session": {
+                              "type": "string"
+                            },
+                            "isActive": {
                               "type": "boolean"
                             },
-                            "campus": {
+                            "type": {
+                              "type": "string"
+                            },
+                            "campusRelation": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -2894,7 +2870,7 @@
                                 }
                               }
                             },
-                            "users_permissions_user": {
+                            "studentRelation": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -2910,46 +2886,6 @@
                                   }
                                 }
                               }
-                            },
-                            "candidate_vote": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "string"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "session": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "string"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "group": {
-                              "type": "string"
-                            },
-                            "scolarLevel": {
-                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -3152,7 +3088,7 @@
           }
         },
         "tags": [
-          "Student"
+          "Representative-history"
         ],
         "parameters": [],
         "requestBody": {
@@ -3170,8 +3106,75 @@
                       "grade": {
                         "type": "string"
                       },
-                      "student_code": {
+                      "group": {
                         "type": "string"
+                      },
+                      "campus": {
+                        "type": "string"
+                      },
+                      "votes": {
+                        "type": "integer"
+                      },
+                      "session": {
+                        "type": "string"
+                      },
+                      "isActive": {
+                        "type": "boolean"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "campusRelation": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "studentRelation": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "createdBy": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "updatedBy": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
                       }
                     }
                   }
@@ -3182,7 +3185,7 @@
         }
       }
     },
-    "/students/{id}": {
+    "/representative-histories/{id}": {
       "get": {
         "responses": {
           "200": {
@@ -3205,17 +3208,25 @@
                             "grade": {
                               "type": "string"
                             },
-                            "created_date": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "student_code": {
+                            "group": {
                               "type": "string"
                             },
-                            "isCandidate": {
+                            "campus": {
+                              "type": "string"
+                            },
+                            "votes": {
+                              "type": "integer"
+                            },
+                            "session": {
+                              "type": "string"
+                            },
+                            "isActive": {
                               "type": "boolean"
                             },
-                            "campus": {
+                            "type": {
+                              "type": "string"
+                            },
+                            "campusRelation": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -4446,7 +4457,7 @@
                                 }
                               }
                             },
-                            "users_permissions_user": {
+                            "studentRelation": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -4462,46 +4473,6 @@
                                   }
                                 }
                               }
-                            },
-                            "candidate_vote": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "string"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "session": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "string"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "group": {
-                              "type": "string"
-                            },
-                            "scolarLevel": {
-                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -4704,7 +4675,7 @@
           }
         },
         "tags": [
-          "Student"
+          "Representative-history"
         ],
         "parameters": [
           {
@@ -4742,17 +4713,25 @@
                             "grade": {
                               "type": "string"
                             },
-                            "created_date": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "student_code": {
+                            "group": {
                               "type": "string"
                             },
-                            "isCandidate": {
+                            "campus": {
+                              "type": "string"
+                            },
+                            "votes": {
+                              "type": "integer"
+                            },
+                            "session": {
+                              "type": "string"
+                            },
+                            "isActive": {
                               "type": "boolean"
                             },
-                            "campus": {
+                            "type": {
+                              "type": "string"
+                            },
+                            "campusRelation": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -5983,7 +5962,7 @@
                                 }
                               }
                             },
-                            "users_permissions_user": {
+                            "studentRelation": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -5999,46 +5978,6 @@
                                   }
                                 }
                               }
-                            },
-                            "candidate_vote": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "string"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "session": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "string"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "group": {
-                              "type": "string"
-                            },
-                            "scolarLevel": {
-                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -6241,7 +6180,7 @@
           }
         },
         "tags": [
-          "Student"
+          "Representative-history"
         ],
         "parameters": [
           {
@@ -6270,65 +6209,45 @@
                       "grade": {
                         "type": "string"
                       },
-                      "created_date": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "student_code": {
-                        "type": "string"
-                      },
-                      "isCandidate": {
-                        "type": "boolean"
-                      },
-                      "campus": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "users_permissions_user": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "candidate_vote": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "session": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
                       "group": {
                         "type": "string"
                       },
-                      "scolarLevel": {
+                      "campus": {
                         "type": "string"
+                      },
+                      "votes": {
+                        "type": "integer"
+                      },
+                      "session": {
+                        "type": "string"
+                      },
+                      "isActive": {
+                        "type": "boolean"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "campusRelation": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "studentRelation": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
                       },
                       "createdAt": {
                         "type": "string",
@@ -6527,7 +6446,7 @@
           }
         },
         "tags": [
-          "Student"
+          "Representative-history"
         ],
         "parameters": [
           {

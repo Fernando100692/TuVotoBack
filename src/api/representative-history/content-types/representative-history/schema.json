@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "representative_histories",
+  "info": {
+    "singularName": "representative-history",
+    "pluralName": "representative-histories",
+    "displayName": "RepresentativeHistory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "grade": {
+      "type": "string"
+    },
+    "group": {
+      "type": "string"
+    },
+    "campus": {
+      "type": "string"
+    },
+    "votes": {
+      "type": "integer"
+    },
+    "session": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "type": {
+      "type": "string",
+      "default": "Personero"
+    },
+    "campusRelation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::campus.campus"
+    },
+    "studentRelation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::student.student"
+    }
+  }
+}
