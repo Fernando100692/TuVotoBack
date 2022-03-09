@@ -179,7 +179,7 @@ module.exports = createCoreController("api::student.student", ({ strapi }) => ({
   },
 
   async deleteAll() {
-    /*     const allUsersStudent = await strapi.db
+    const allUsersStudent = await strapi.db
       .query("plugin::users-permissions.user")
       .findMany({
         select: ["*"],
@@ -200,10 +200,7 @@ module.exports = createCoreController("api::student.student", ({ strapi }) => ({
     );
 
     //Delete All Candidates
-    return await strapi.db.query("api::candidate.candidate").deleteMany(); */
-    return {
-      count: 1,
-    };
+    return await strapi.db.query("api::candidate.candidate").deleteMany();
   },
 
   changePassword: async (ctx) => {

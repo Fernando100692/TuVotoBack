@@ -47,6 +47,16 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::student.student"
+    },
+    "student_code": {
+      "type": "string"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
