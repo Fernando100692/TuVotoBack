@@ -6,7 +6,7 @@ module.exports = [
     config: {
       enabled: true,
       header: "*",
-      origin: "*",
+      origin: ["http://localhost:3000"],
     },
   },
   "strapi::poweredBy",
