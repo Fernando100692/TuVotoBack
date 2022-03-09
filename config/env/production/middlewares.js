@@ -1,20 +1,20 @@
-module.exports = {
-  load: {
-    before: ["timer", "responseTime", "logger", "cors", "responses", "gzip"],
-    order: [],
-    after: ["parser", "router"],
-  },
-  settings: {
-    timer: {
+module.exports = [
+  {
+    name: "strapi::cors",
+    config: {
       enabled: true,
-    },
-    cors: {
-      enabled: true,
-      origin: [
-        "http://localhost",
-        "https://tu-voto-web-jeac.vercel.app",
-        "http://12.23.45.67:1234",
-      ],
+      header: "*",
+      origin: ["http://localhost:3000", "https://tu-voto-web-jeac.vercel.app"],
     },
   },
-};
+  "strapi::errors",
+  "strapi::security",
+  "strapi::cors",
+  "strapi::poweredBy",
+  "strapi::logger",
+  "strapi::query",
+  "strapi::body",
+  "strapi::session",
+  "strapi::favicon",
+  "strapi::public",
+];
