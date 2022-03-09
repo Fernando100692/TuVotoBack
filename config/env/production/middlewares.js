@@ -5,14 +5,7 @@ module.exports = [
     name: "strapi::cors",
     config: {
       enabled: true,
-      origin: [
-        "http://localhost:3000",
-        "http://localhost:8000",
-        "http://vg.local",
-        "http://localhost:1337",
-        "http://apivg.tadtarget.com",
-        "https://apivg.tadtarget.com",
-      ],
+      origin: "*",
       maxAge: 31536000,
       credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"],
