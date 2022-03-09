@@ -1074,76 +1074,13 @@
                                                             }
                                                           }
                                                         },
-                                                        "session": {
-                                                          "type": "object",
-                                                          "properties": {
-                                                            "data": {
-                                                              "type": "object",
-                                                              "properties": {
-                                                                "id": {
-                                                                  "type": "string"
-                                                                },
-                                                                "attributes": {
-                                                                  "type": "object",
-                                                                  "properties": {
-                                                                    "name": {
-                                                                      "type": "string"
-                                                                    },
-                                                                    "description": {
-                                                                      "type": "string"
-                                                                    },
-                                                                    "createdAt": {
-                                                                      "type": "string",
-                                                                      "format": "date-time"
-                                                                    },
-                                                                    "updatedAt": {
-                                                                      "type": "string",
-                                                                      "format": "date-time"
-                                                                    },
-                                                                    "createdBy": {
-                                                                      "type": "object",
-                                                                      "properties": {
-                                                                        "data": {
-                                                                          "type": "object",
-                                                                          "properties": {
-                                                                            "id": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "attributes": {
-                                                                              "type": "object",
-                                                                              "properties": {}
-                                                                            }
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    },
-                                                                    "updatedBy": {
-                                                                      "type": "object",
-                                                                      "properties": {
-                                                                        "data": {
-                                                                          "type": "object",
-                                                                          "properties": {
-                                                                            "id": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "attributes": {
-                                                                              "type": "object",
-                                                                              "properties": {}
-                                                                            }
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        },
                                                         "group": {
                                                           "type": "string"
                                                         },
                                                         "scolarLevel": {
+                                                          "type": "string"
+                                                        },
+                                                        "session": {
                                                           "type": "string"
                                                         },
                                                         "createdAt": {
@@ -1300,27 +1237,13 @@
                                   }
                                 }
                               },
-                              "session": {
-                                "type": "object",
-                                "properties": {
-                                  "data": {
-                                    "type": "object",
-                                    "properties": {
-                                      "id": {
-                                        "type": "string"
-                                      },
-                                      "attributes": {
-                                        "type": "object",
-                                        "properties": {}
-                                      }
-                                    }
-                                  }
-                                }
-                              },
                               "group": {
                                 "type": "string"
                               },
                               "scolarLevel": {
+                                "type": "string"
+                              },
+                              "session": {
                                 "type": "string"
                               },
                               "createdAt": {
@@ -2702,76 +2625,13 @@
                                                           }
                                                         }
                                                       },
-                                                      "session": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                          "data": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                              "id": {
-                                                                "type": "string"
-                                                              },
-                                                              "attributes": {
-                                                                "type": "object",
-                                                                "properties": {
-                                                                  "name": {
-                                                                    "type": "string"
-                                                                  },
-                                                                  "description": {
-                                                                    "type": "string"
-                                                                  },
-                                                                  "createdAt": {
-                                                                    "type": "string",
-                                                                    "format": "date-time"
-                                                                  },
-                                                                  "updatedAt": {
-                                                                    "type": "string",
-                                                                    "format": "date-time"
-                                                                  },
-                                                                  "createdBy": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                      "data": {
-                                                                        "type": "object",
-                                                                        "properties": {
-                                                                          "id": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "attributes": {
-                                                                            "type": "object",
-                                                                            "properties": {}
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    }
-                                                                  },
-                                                                  "updatedBy": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                      "data": {
-                                                                        "type": "object",
-                                                                        "properties": {
-                                                                          "id": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "attributes": {
-                                                                            "type": "object",
-                                                                            "properties": {}
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      },
                                                       "group": {
                                                         "type": "string"
                                                       },
                                                       "scolarLevel": {
+                                                        "type": "string"
+                                                      },
+                                                      "session": {
                                                         "type": "string"
                                                       },
                                                       "createdAt": {
@@ -2928,27 +2788,13 @@
                                 }
                               }
                             },
-                            "session": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "string"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
-                                    }
-                                  }
-                                }
-                              }
-                            },
                             "group": {
                               "type": "string"
                             },
                             "scolarLevel": {
+                              "type": "string"
+                            },
+                            "session": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -4254,76 +4100,13 @@
                                                           }
                                                         }
                                                       },
-                                                      "session": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                          "data": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                              "id": {
-                                                                "type": "string"
-                                                              },
-                                                              "attributes": {
-                                                                "type": "object",
-                                                                "properties": {
-                                                                  "name": {
-                                                                    "type": "string"
-                                                                  },
-                                                                  "description": {
-                                                                    "type": "string"
-                                                                  },
-                                                                  "createdAt": {
-                                                                    "type": "string",
-                                                                    "format": "date-time"
-                                                                  },
-                                                                  "updatedAt": {
-                                                                    "type": "string",
-                                                                    "format": "date-time"
-                                                                  },
-                                                                  "createdBy": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                      "data": {
-                                                                        "type": "object",
-                                                                        "properties": {
-                                                                          "id": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "attributes": {
-                                                                            "type": "object",
-                                                                            "properties": {}
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    }
-                                                                  },
-                                                                  "updatedBy": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                      "data": {
-                                                                        "type": "object",
-                                                                        "properties": {
-                                                                          "id": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "attributes": {
-                                                                            "type": "object",
-                                                                            "properties": {}
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      },
                                                       "group": {
                                                         "type": "string"
                                                       },
                                                       "scolarLevel": {
+                                                        "type": "string"
+                                                      },
+                                                      "session": {
                                                         "type": "string"
                                                       },
                                                       "createdAt": {
@@ -4480,27 +4263,13 @@
                                 }
                               }
                             },
-                            "session": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "string"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
-                                    }
-                                  }
-                                }
-                              }
-                            },
                             "group": {
                               "type": "string"
                             },
                             "scolarLevel": {
+                              "type": "string"
+                            },
+                            "session": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -5791,76 +5560,13 @@
                                                           }
                                                         }
                                                       },
-                                                      "session": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                          "data": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                              "id": {
-                                                                "type": "string"
-                                                              },
-                                                              "attributes": {
-                                                                "type": "object",
-                                                                "properties": {
-                                                                  "name": {
-                                                                    "type": "string"
-                                                                  },
-                                                                  "description": {
-                                                                    "type": "string"
-                                                                  },
-                                                                  "createdAt": {
-                                                                    "type": "string",
-                                                                    "format": "date-time"
-                                                                  },
-                                                                  "updatedAt": {
-                                                                    "type": "string",
-                                                                    "format": "date-time"
-                                                                  },
-                                                                  "createdBy": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                      "data": {
-                                                                        "type": "object",
-                                                                        "properties": {
-                                                                          "id": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "attributes": {
-                                                                            "type": "object",
-                                                                            "properties": {}
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    }
-                                                                  },
-                                                                  "updatedBy": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                      "data": {
-                                                                        "type": "object",
-                                                                        "properties": {
-                                                                          "id": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "attributes": {
-                                                                            "type": "object",
-                                                                            "properties": {}
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      },
                                                       "group": {
                                                         "type": "string"
                                                       },
                                                       "scolarLevel": {
+                                                        "type": "string"
+                                                      },
+                                                      "session": {
                                                         "type": "string"
                                                       },
                                                       "createdAt": {
@@ -6017,27 +5723,13 @@
                                 }
                               }
                             },
-                            "session": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "string"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
-                                    }
-                                  }
-                                }
-                              }
-                            },
                             "group": {
                               "type": "string"
                             },
                             "scolarLevel": {
+                              "type": "string"
+                            },
+                            "session": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -6313,21 +6005,13 @@
                         ],
                         "example": "string or id"
                       },
-                      "session": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
                       "group": {
                         "type": "string"
                       },
                       "scolarLevel": {
+                        "type": "string"
+                      },
+                      "session": {
                         "type": "string"
                       },
                       "createdAt": {

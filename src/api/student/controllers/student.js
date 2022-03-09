@@ -52,18 +52,24 @@ module.exports = createCoreController("api::student.student", ({ strapi }) => ({
     return entries;
   },
 
+  async update(ctx) {
+    const { body } = ctx.request;
+    const { id } = ctx.params;
+    return strapi.query("api::student.student").update({
+      where: { id },
+      data: body,
+      populate: true,
+    });
+  },
+
   async editUser(ctx) {
     const { id } = ctx.params;
     const body = ctx.request.body;
-    /* return strapi.entityService.update('plugin::users-permissions.user', userId, {
-      data: params,
-      populate: ['role'],
-    }); */
-  console.log('ESO SE VAAAA', body, id);
-    await strapi.db.query('plugin::users-permissions.user').update({
+
+    await strapi.db.query("plugin::users-permissions.user").update({
       where: { id },
       data: body,
-      populate: ['role'],
+      populate: ["role"],
     });
   },
 
@@ -173,30 +179,31 @@ module.exports = createCoreController("api::student.student", ({ strapi }) => ({
   },
 
   async deleteAll() {
-    {
-      const allUsersStudent = await strapi.db
-        .query("plugin::users-permissions.user")
-        .findMany({
-          select: ["*"],
-          where: { role: 3 },
-          populate: true,
-        });
+    /*     const allUsersStudent = await strapi.db
+      .query("plugin::users-permissions.user")
+      .findMany({
+        select: ["*"],
+        where: { role: 3 },
+        populate: true,
+      });
 
-      // Delete All Students
-      await strapi.db.query("api::student.student").deleteMany();
+    // Delete All Students
+    await strapi.db.query("api::student.student").deleteMany();
 
-      //Delete All Users
-      await Promise.all(
-        allUsersStudent.map((itm) =>
-          strapi
-            .query("plugin::users-permissions.user")
-            .delete({ where: { id: itm.id } })
-        )
-      );
+    //Delete All Users
+    await Promise.all(
+      allUsersStudent.map((itm) =>
+        strapi
+          .query("plugin::users-permissions.user")
+          .delete({ where: { id: itm.id } })
+      )
+    );
 
-      //Delete All Candidates
-      return await strapi.db.query("api::candidate.candidate").deleteMany();
-    }
+    //Delete All Candidates
+    return await strapi.db.query("api::candidate.candidate").deleteMany(); */
+    return {
+      count: 1,
+    };
   },
 
   changePassword: async (ctx) => {

@@ -4,12 +4,10 @@ module.exports = ({ env }) => ({
   connection: {
     client: "sqlite",
     pool: {
-      min: 0,
-      max: 97,
-      idleTimeoutMillis: 30000000,
-      createTimeoutMillis: 30000000,
-      acquireTimeoutMillis: 30000000,
-      propagateCreateError: false,
+      acquireTimeoutMillis: env.int(
+        "DATABASE_POOL_ACQUIRE_TIMEOUT_MILLIS",
+        600000
+      ),
     },
     connection: {
       filename: path.join(

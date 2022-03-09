@@ -50,17 +50,16 @@
       "relation": "oneToOne",
       "target": "api::candidate.candidate"
     },
-    "session": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::session.session"
-    },
     "group": {
       "type": "string"
     },
     "scolarLevel": {
       "type": "string",
       "default": "Primaria"
+    },
+    "session": {
+      "type": "string",
+      "default": "Mañana"
     }
   }
 }

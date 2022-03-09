@@ -19,6 +19,15 @@ module.exports = createCoreController(
       return entries;
     },
 
+    async delete(ctx) {
+      const { id } = ctx.params;
+      return strapi.query("api::candidate.candidate").delete({
+        select: ["*"],
+        where: { id },
+        populate: true,
+      });
+    },
+
     async create(ctx) {
       {
         return await strapi.entityService.create("api::candidate.candidate", {
