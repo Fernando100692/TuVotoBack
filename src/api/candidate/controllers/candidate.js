@@ -19,6 +19,16 @@ module.exports = createCoreController(
       return entries;
     },
 
+    async update(ctx) {
+      const { body } = ctx.request;
+      const { id } = ctx.params;
+      return strapi.query("api::candidate.candidate").update({
+        where: { id },
+        data: body,
+        populate: true,
+      });
+    },
+
     async delete(ctx) {
       const { id } = ctx.params;
       return strapi.query("api::candidate.candidate").delete({
