@@ -62,11 +62,20 @@ module.exports = createCoreController("api::student.student", ({ strapi }) => ({
     });
   },
 
+  async delete(ctx) {
+    const { id } = ctx.params;
+    return strapi.query("api::student.student").delete({
+      select: ["*"],
+      where: { id },
+      populate: true,
+    });
+  },
+
   async editUser(ctx) {
     const { id } = ctx.params;
     const body = ctx.request.body;
 
-    await strapi.db.query("plugin::users-permissions.user").update({
+    return await strapi.query("plugin::users-permissions.user").update({
       where: { id },
       data: body,
       populate: ["role"],

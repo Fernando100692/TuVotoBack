@@ -31,6 +31,16 @@
     },
     "totalRepresentatives": {
       "type": "integer"
+    },
+    "vote_statusAfternoon": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vote-status.vote-status"
+    },
+    "vote_statusMorning": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vote-status.vote-status"
     }
   }
 }

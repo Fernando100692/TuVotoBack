@@ -31,6 +31,33 @@ module.exports = createCoreController(
         });
     },
 
+    async updateAllByCampus(ctx) {
+      const { id } = ctx.params;
+      const entries = await strapi.db
+        .query("api::representative-history.representative-history")
+        .findMany({
+          select: ["*"],
+          where: { isActive: true },
+          populate: true,
+        });
+
+      if (entries.length > 0) {
+        return await Promise.all(
+          entries.map(async (itm) => {
+            return strapi
+              .query("api::representative-history.representative-history")
+              .update({
+                where: { id: itm.id },
+                data: { isActive: false },
+                populate: true,
+              });
+          })
+        );
+      } else {
+        return entries;
+      }
+    },
+
     async updateAll() {
       const entries = await strapi.db
         .query("api::representative-history.representative-history")
@@ -54,6 +81,25 @@ module.exports = createCoreController(
         );
       } else {
         return entries;
+      }
+    },
+
+    async updateMany(ctx) {
+      const { body } = ctx.request;
+      if (body.length > 0) {
+        return await Promise.all(
+          body.map(async (itm) => {
+            return strapi
+              .query("api::representative-history.representative-history")
+              .update({
+                where: { id: itm.id },
+                data: { isActive: false },
+                populate: true,
+              });
+          })
+        );
+      } else {
+        return body;
       }
     },
 

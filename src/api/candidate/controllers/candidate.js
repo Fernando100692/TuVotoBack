@@ -38,6 +38,30 @@ module.exports = createCoreController(
       });
     },
 
+    async deleteMany(ctx) {
+      const { body } = ctx.request;
+
+      await Promise.all(
+        body.map(async (itm) => {
+          return strapi.query("api::student.student").update({
+            where: { id: itm.student.id },
+            data: { isCandidate: false },
+            populate: true,
+          });
+        })
+      );
+
+      return await Promise.all(
+        body.map(async (itm) => {
+          return strapi.query("api::candidate.candidate").delete({
+            select: ["*"],
+            where: { id: itm.id },
+            populate: true,
+          });
+        })
+      );
+    },
+
     async create(ctx) {
       {
         return await strapi.entityService.create("api::candidate.candidate", {

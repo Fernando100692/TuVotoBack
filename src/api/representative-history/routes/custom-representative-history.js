@@ -10,5 +10,10 @@ module.exports = {
       path: "/representative-histories/updateAll",
       handler: "representative-history.updateAll",
     },
+    {
+      method: "POST",
+      path: "/representative-histories/updateMany",
+      handler: "representative-history.updateMany",
+    },
   ],
 };
